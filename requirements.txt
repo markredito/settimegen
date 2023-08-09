@@ -39,7 +39,6 @@ certifi==2023.7.22
 
 click==8.1.6
 
-clyent==1.2.2
 
 
 

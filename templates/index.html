@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+    <title>DJ Schedule</title>
+    <style>
+        /* Set the font for the entire page */
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+        }
+
+        /* Add color to headings */
+        h1, h2 {
+            color: #FF4500; /* Orange-Red */
+        }
+
+        /* Add color to list items */
+        ul li {
+            color: #4B0082; /* Indigo */
+        }
+
+        /* Style for form labels */
+        label {
+            color: #20B2AA; /* LightSeaGreen */
+        }
+
+        /* Style for dropdowns and buttons */
+        select, input {
+            background-color: #FFFACD; /* LemonChiffon */
+            color: #8A2BE2; /* BlueViolet */
+            border: 1px solid #20B2AA; /* LightSeaGreen */
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #FFD700; /* Gold */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter DJ Preferences</h1>
+    <form action="/" method="post">
+        <label for="name">DJ Name:</label>
+        <select name="name" required>
+            <option value="Mark Redito">Mark Redito</option>
+            <option value="Unagi">Unagi</option>
+            <option value="Surelawn">Surelawn</option>
+            <option value="Swooky">Swooky</option>
+            <option value="4eyes">4eyes</option>
+        </select><br><br>
+
+        <label for="preferences">Preferences:</label><br>
+        1st: <select name="pref1" required>
+            <option value="0">2:30 pm</option>
+            <option value="1">3:30 pm</option>
+            <option value="2">4:30 pm</option>
+            <option value="3">5:30 pm</option>
+            <option value="4">6:30 pm</option>
+        </select><br>
+        2nd: <select name="pref2" required>
+            <option value="0">2:30 pm</option>
+            <option value="1">3:30 pm</option>
+            <option value="2">4:30 pm</option>
+            <option value="3">5:30 pm</option>
+            <option value="4">6:30 pm</option>
+        </select><br>
+        3rd: <select name="pref3" required>
+            <option value="0">2:30 pm</option>
+            <option value="1">3:30 pm</option>
+            <option value="2">4:30 pm</option>
+            <option value="3">5:30 pm</option>
+            <option value="4">6:30 pm</option>
+        </select><br>
+        4th: <select name="pref4" required>
+            <option value="0">2:30 pm</option>
+            <option value="1">3:30 pm</option>
+            <option value="2">4:30 pm</option>
+            <option value="3">5:30 pm</option>
+            <option value="4">6:30 pm</option>
+        </select><br>
+        5th: <select name="pref5" required>
+            <option value="0">2:30 pm</option>
+            <option value="1">3:30 pm</option>
+            <option value="2">4:30 pm</option>
+            <option value="3">5:30 pm</option>
+            <option value="4">6:30 pm</option>
+        </select><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <h2>Previous Preferences</h2>
+    <ul>
+        {% for pref in preferences %}
+        <li>{{ pref.name }}: {{ pref.preferences }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Generated Schedules</h2>
+    <ul>
+        {% for sch in schedules %}
+        <li>{{ sch.schedule.replace(",", ", ") }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
